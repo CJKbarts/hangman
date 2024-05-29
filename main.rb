@@ -1,4 +1,6 @@
+require 'yaml'
 require_relative 'lib/display'
+require_relative 'lib/serializable'
 require_relative 'lib/computer'
 require_relative 'lib/player'
 require_relative 'lib/game'

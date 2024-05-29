@@ -1,4 +1,5 @@
 class Player
+  include Serializable
   attr_reader :guess
 
   def initialize
@@ -7,7 +8,7 @@ class Player
 
   def make_guess
     print "Please make a guess: "
-    input = gets.chomp until valid_guess?(input)
+    input = gets.chomp.downcase until valid_guess?(input)
     puts
     @guess = input
   end
@@ -18,6 +19,7 @@ class Player
 
   def valid_guess?(input)
     return false if input.nil?
+    return true if input == 'save' || input == 'exit'
 
     correct_length?(input) && letter?(input) && not_guessed_already?(input)
   end

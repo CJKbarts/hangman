@@ -1,4 +1,5 @@
 class Computer
+  include Serializable
   WORD_DICT = File.open('words.txt')
   attr_reader :tries_left
 
