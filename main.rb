@@ -8,5 +8,12 @@ require_relative 'lib/game'
 include Display
 
 display_intro
-game = Game.new
+display_prompt
+
+input = '3'
+until %[12].include?(input)
+  print ' > '
+  input = gets.chomp
+end
+game = Game.new(input)
 game.play_game

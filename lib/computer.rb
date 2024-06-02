@@ -43,7 +43,7 @@ class Computer
 
   def pick_secret_word
     all_words = WORD_DICT.readlines
-    all_words[rand(all_words.length)].split('')
+    all_words[rand(all_words.length)].chomp.split('')
   end
 
   def update_progress(guess)

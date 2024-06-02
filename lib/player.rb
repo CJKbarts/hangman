@@ -19,7 +19,7 @@ class Player
 
   def valid_guess?(input)
     return false if input.nil?
-    return true if input == 'save' || input == 'exit'
+    return true if input == 'save' || input == 'quit'
 
     correct_length?(input) && letter?(input) && not_guessed_already?(input)
   end

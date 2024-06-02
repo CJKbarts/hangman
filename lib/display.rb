@@ -15,6 +15,17 @@ module Display
       You only use up your tries when you guess a letter wrongly. You get 7 tries for
       each game
 
+      To save the game at any point, please enter 'save' when prompted to guess
+      To quit the game at any point, please enter 'quit' when prompted to guess
+
     intro
+  end
+
+  def display_prompt
+    puts <<~prompt
+      Please enter 1 or 2
+      [1] New game
+      [2] Load game
+    prompt
   end
 end
