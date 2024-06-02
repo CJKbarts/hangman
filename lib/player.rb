@@ -10,6 +10,7 @@ class Player
     print "Please make a guess: "
     input = gets.chomp.downcase until valid_guess?(input)
     puts
+    history.push(input)
     @guess = input
   end
 
