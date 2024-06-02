@@ -21,11 +21,12 @@ class Game
     end
 
     computer.display_results
+    File.delete(save_file) unless save_file.nil?
   end
 
   private
 
-  attr_reader :computer, :player
+  attr_reader :computer, :player, :save_file
 
   def new_game
     @computer = Computer.new
@@ -38,7 +39,8 @@ class Game
       puts
       new_game
     else
-      unserialize(File.read(pick_save_file))
+      @save_file = pick_save_file
+      unserialize(File.read(save_file))
     end
   end
 
